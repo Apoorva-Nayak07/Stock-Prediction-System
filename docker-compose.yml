@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: ai-stock-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: ai-stock-platform
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - ai-stock-network
+
+  # Backend API Server
+  server:
+    build:
+      context: ./server
+      dockerfile: ../docker/Dockerfile.server
+    container_name: ai-stock-server
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGODB_URI: mongodb://mongodb:27017/ai-stock-platform
+      JWT_SECRET: ${JWT_SECRET:-your_jwt_secret_change_in_production}
+      AI_SERVICE_URL: http://ai-service:8000
+      CLIENT_URL: http://localhost:3000
+    depends_on:
+      - mongodb
+      - ai-service
+    networks:
+      - ai-stock-network
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+
+  # AI Service (Python FastAPI)
+  ai-service:
+    build:
+      context: ./ai-service
+      dockerfile: ../docker/Dockerfile.ai
+    container_name: ai-stock-ai-service
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: 8000
+      HOST: 0.0.0.0
+    networks:
+      - ai-stock-network
+    volumes:
+      - ./ai-service:/app
+      - ai_models:/app/models
+
+  # Frontend React App
+  client:
+    build:
+      context: ./client
+      dockerfile: ../docker/Dockerfile.client
+    container_name: ai-stock-client
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_API_URL: http://localhost:5000/api
+      REACT_APP_SOCKET_URL: http://localhost:5000
+    depends_on:
+      - server
+    networks:
+      - ai-stock-network
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+
+networks:
+  ai-stock-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+  ai_models:
