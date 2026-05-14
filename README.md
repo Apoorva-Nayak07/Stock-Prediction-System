@@ -8,6 +8,9 @@ A production-grade, enterprise-level fintech platform powered by AI/ML for stock
 ![Python](https://img.shields.io/badge/Python-3.11+-blue)
 ![React](https://img.shields.io/badge/React-18+-61dafb)
 
+
+
+
 ## ✨ Features
 
 ### 🤖 AI-Powered Predictions
@@ -367,38 +370,7 @@ railway up
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open Pull Request
 
-## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Authors
-
-- **AI Stock Platform Team**
-
-## 🙏 Acknowledgments
-
-- TradingView for UI inspiration
-- Bloomberg Terminal for design patterns
-- yfinance for stock data
-- Hugging Face for NLP models
-- The open-source community
-
-## 📞 Support
-
-For support, email support@aistockplatform.com or join our Slack channel.
-
-## 🗺️ Roadmap
-
-- [ ] Paper trading simulation
-- [ ] Cryptocurrency support
-- [ ] Options trading analytics
-- [ ] AI chatbot assistant
-- [ ] Voice commands
-- [ ] Mobile app (React Native)
-- [ ] Advanced portfolio optimization
-- [ ] Social trading features
-- [ ] News aggregation engine
-- [ ] Multi-language support
 
 ---
 
