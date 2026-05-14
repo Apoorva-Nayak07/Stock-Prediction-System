@@ -9,7 +9,28 @@ A production-grade, enterprise-level fintech platform powered by AI/ML for stock
 ![React](https://img.shields.io/badge/React-18+-61dafb)
 
 
+## Screenshots
 
+### Landing page
+![Login](landingpage.png)
+
+### Sign-in page
+![Signin](signin.png)
+
+### Dashboard
+![Dashboard](dashboard.png)
+
+### AI Prediction Center
+![AI-PREDICTION](aipredsec.png)
+
+### Sentiment Analytics
+![Sentiment-Analytics](sentiment.png)
+
+### Protfolio Analytics
+![Protfolio-Analytics](portfolio.png)
+
+### Watchlist
+![Watchlist](watchlist.png)
 
 ## ✨ Features
 
