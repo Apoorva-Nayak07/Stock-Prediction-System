@@ -391,10 +391,3 @@ railway up
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open Pull Request
 
-
-
----
-
-**Built with ❤️ by the AI Stock Platform Team**
-
-⭐ Star us on GitHub if you find this project useful!
