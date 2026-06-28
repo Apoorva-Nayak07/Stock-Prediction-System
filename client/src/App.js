@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import useAutStore from './store/authStore';
+import useAuthStore from './store/authStore';
 
 // Pages
 import LandingPage from './pages/LandingPage';
