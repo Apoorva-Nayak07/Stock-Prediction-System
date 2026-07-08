@@ -6,7 +6,7 @@ import useAuthStore from './store/authStore';
 // Pages
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
-import Register from './pages/Register';
+import Register from './pages/Register'; 
 import Dashboard from './pages/Dashboard';
 import PredictionCenter from './pages/PredictionCenter';
 import SentimentDashboard from './pages/SentimentDashboard';
